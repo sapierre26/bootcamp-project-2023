@@ -1,12 +1,8 @@
-function itOverBlog(): void {
-  type Blog = {
-    title: string;
-    date: string;
-    description: string;
-    slug: string;
-  };
+export interface Blog {
 
-  const blogs: Blog[] = [
+}
+
+const blogs: Blog[] = [
     {
       title: "BSU Presents October Madness",
       date: "October 6th, 2023",
@@ -30,20 +26,4 @@ function itOverBlog(): void {
     },
   ];
 
-  const blogContainer = document.getElementById("blogbody");
-
-  blogs.forEach((blog) => {
-    const createNewBlogEl = document.createElement("div");
-
-    createNewBlogEl.className = "newBlogEntry";
-    createNewBlogEl.innerHTML = `
-            <p>${blog.title}</p>
-            <p>${blog.date}</p>
-            <p>${blog.description}</p>
-            <a href="${blog.slug}"></a>
-    `;
-    blogContainer?.appendChild(createNewBlogEl);
-  });
-}
-
-itOverBlog();
+  export default blogs;

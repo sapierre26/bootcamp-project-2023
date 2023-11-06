@@ -1,4 +1,4 @@
-function itOverBlog() {
+function itOverBlog(): void {
   type Blog = {
     title: string;
     date: string;
