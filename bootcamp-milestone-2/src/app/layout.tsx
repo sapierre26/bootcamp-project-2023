@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import BlogPreview from "@/Components/blogPreview";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,7 +18,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>{children}</body>
-      <div id="blogbody"></div>
+      <div id="blogbody">
+        // somewhere in the return statement
+        {blogs.map(
+          (blog) => (
+            <BlogPreview />
+          ) // This is how we call the component
+        )}
+      </div>
       <script src="src/script.js"></script>
       <footer>© 2023 Turkish Delight | All Rights Reserved</footer>
     </html>
